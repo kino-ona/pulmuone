@@ -1,0 +1,60 @@
+.a11y {
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+.logo {
+	background: url("../images/logo.svg") no-repeat 0 0;
+	display: flex;
+	height: 32px;
+	width: 94px;
+
+	a {
+		display: block;
+		height: 100%;
+		width: 100%;
+	}
+}
+
+.anniversary {
+	background: url("../images/40th.svg") no-repeat 0 0 / cover;
+	height: 120px;
+	width: 176px;
+}
+
+.wraping {
+	margin: 0 auto;
+	max-width: 1648px;
+	padding: 0 24px;
+
+	&__header {
+		margin: 0 auto;
+		margin-bottom: 40px;
+		max-width: 877px;
+		text-align: center;
+
+		.title {
+			font-size: 50px;
+			font-weight: 700;
+
+			&:not(:last-child) {
+				margin-bottom: 16px;
+			}
+		}
+
+		.desc {
+			font-size: 18px;
+			line-height: 1.6;
+		}
+	}
+}
+
+.roundBox {
+	clip-path: inset(0 round 44px);
+}
