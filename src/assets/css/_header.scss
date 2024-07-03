@@ -1,4 +1,5 @@
 @use "./mixins";
+@use "./breakpoints";
 
 .header {
 	height: 120px;
@@ -100,5 +101,9 @@
 			font-size: 18px;
 			font-weight: 700;
 		}
+	}
+
+	@include breakpoints.md {
+		height: 52px;
 	}
 }

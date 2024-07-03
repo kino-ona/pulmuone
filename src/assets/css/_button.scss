@@ -1,9 +1,11 @@
+@use "./breakpoints";
+
 .button {
 	display: flex;
 	justify-content: center;
 
 	&:not(:first-child) {
-		margin-top: 40px;
+		margin-top: min(2.08vw, 40px);
 	}
 
 	&__item {
@@ -13,9 +15,9 @@
 		border-radius: 100vw;
 		display: inline-flex;
 		font-weight: 700;
-		height: 50px;
+		height: min(2.6vw, 50px);
 		justify-content: center;
-		padding: 0 28px;
+		padding: 0 min(1.46vw, 28px);
 		text-align: center;
 
 		&--primary {
@@ -27,6 +29,18 @@
 		&--secondary {
 			background-color: #000;
 			color: #fff;
+		}
+	}
+
+	@include breakpoints.md {
+		&:not(:first-child) {
+			margin-top: 7.78vw;
+		}
+
+		&__item {
+			font-size: 3.89vw;
+			height: 11.11vw;
+			padding: 0 7.78vw;
 		}
 	}
 }

@@ -1,3 +1,5 @@
+@use "./breakpoints";
+
 .a11y {
 	border: 0;
 	clip: rect(0, 0, 0, 0);
@@ -23,38 +25,67 @@
 }
 
 .anniversary {
-	background: url("../images/40th.svg") no-repeat 0 0 / cover;
-	height: 120px;
-	width: 176px;
+	background: url("../images/40th.svg") no-repeat 0 0 / 100% 100%;
+	height: min(9.38vw, 180px);
+	width: min(9.38vw, 180px);
+
+	@include breakpoints.md {
+		height: 25vw;
+		width: 25vw;
+	}
 }
 
 .wraping {
 	margin: 0 auto;
-	max-width: 1648px;
-	padding: 0 24px;
+	max-width: 1640px;
+	padding: 0 min(1.04vw, 20px);
 
 	&__header {
 		margin: 0 auto;
-		margin-bottom: 40px;
+		margin-bottom: min(2.08vw, 40px);
 		max-width: 877px;
 		text-align: center;
 
 		.title {
-			font-size: 50px;
+			font-size: min(2.6vw, 50px);
 			font-weight: 700;
 
 			&:not(:last-child) {
-				margin-bottom: 16px;
+				margin-bottom: min(0.83vw, 16px);
 			}
 		}
 
 		.desc {
-			font-size: 18px;
+			font-size: min(0.94vw, 18px);
 			line-height: 1.6;
+		}
+	}
+
+	@include breakpoints.md {
+		padding: 0 5.56vw;
+
+		&__header {
+			margin-bottom: 7.78vw;
+
+			.title {
+				font-size: 7.22vw;
+
+				&:not(:last-child) {
+					margin-bottom: 3.33vw;
+				}
+			}
+
+			.desc {
+				font-size: 3.89vw;
+			}
 		}
 	}
 }
 
 .roundBox {
-	clip-path: inset(0 round 44px);
+	clip-path: inset(0 round min(2.29vw, 44px));
+
+	@include breakpoints.md {
+		clip-path: inset(0 round 5.56vw);
+	}
 }

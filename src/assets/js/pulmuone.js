@@ -13,64 +13,36 @@ const kvSwiper = new Swiper(".kv__swiper", {
 	loop: true,
 	slidesPerView: "auto",
 	centeredSlides: true,
-	spaceBetween: 20,
 	freeMode: true,
 	speed: 6000,
 	allowTouchMove: false,
 	autoplay: {
-		delay: 100,
-		waitForTransition: false
+		delay: 0
 	}
-	// breakpoints: {
-	// 	1280: {
-	// 		slidesPerView:
-	// 	}
-	// }
 });
 
 const coverflowSwiper = new Swiper(".coverflow", {
 	speed: 1000,
 	direction: "vertical",
 	slidesPerView: "auto",
-	// effect: "creative",
-	// creativeEffect: {
-	// 	prev: {
-	// 		translate: [0, -50, 0],
-	// 		opacity: 0,
-	// 		rotate: [0, 0, 0],
-	// 		shadow: true,
-	// 		limitProgress: 3,
-	// 		shadowPerProgress: true
-	// 	},
-	// 	next: {
-	// 		translate: [0, 30, 0],
-	// 		scale: 0.97,
-	// 		rotate: [0, 0, 0],
-	// 		opacity: 1
-	// 	}
-	// }
 	effect: "coverflow",
 	coverflowEffect: {
 		rotate: 0,
-		stretch: 654,
-		depth: 20,
+		stretch: 514,
+		depth: 50,
 		modifier: 1,
 		slideShadows: false
+	},
+	on: {
+		init: function (swiper) {
+			swiper.params.coverflowEffect.stretch = swiper.height - 80;
+			swiper.update();
+		},
+		resize: function (swiper) {
+			swiper.params.coverflowEffect.stretch = swiper.height - 80;
+			swiper.update();
+		}
 	}
-	// on: {
-	// 	update: function (swiper) {
-	// 		swiper.slides[3].style.transform = ``;
-	// 		// swiper.slides[3].style.border = `1px solid red`;
-	// 	},
-	// 	sliderMove: function (swiper, event) {
-	// 		console.log(swiper.activeIndex);
-	// 		if (swiper.activeIndex === 0) {
-	// 			swiper.on("update", () => {
-	// 				swiper.slides[3].style.transform = `translate3d(calc(0px), calc(-1980px), calc(0px)) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(0.94)`;
-	// 			});
-	// 		}
-	// 	}
-	// }
 });
 
 const kv = () => {
@@ -116,6 +88,7 @@ const kv = () => {
 		introFruits.style.setProperty("--intro-fruits", opacity);
 	});
 };
+kv();
 
 const prologue = () => {
 	const prologue = document.querySelector(".prologue");
@@ -123,16 +96,16 @@ const prologue = () => {
 	let anniversaryScale, anniversaryMargin, circleScale;
 
 	window.addEventListener("scroll", (event) => {
-		anniversaryScale = (window.scrollY - prologue.offsetHeight * 2) * 1.5;
-		anniversaryMargin = (window.scrollY - prologue.offsetHeight * 1.8) * 0.04;
-		circleScale = ((window.scrollY - prologue.offsetHeight * 1.8) * 2) / 2;
+		anniversaryScale = (window.scrollY - prologue.offsetHeight * 2) * 0.03;
+		anniversaryMargin = (window.scrollY - prologue.offsetHeight * 2) * 0.04;
+		circleScale = (window.scrollY - prologue.offsetHeight * 2) * 0.3;
 
-		if (anniversaryScale < -2968.25) {
-			anniversaryScale = -2968.25;
-		} else if (anniversaryScale > -100) {
-			anniversaryScale = -100;
+		if (anniversaryScale < -29.6825) {
+			anniversaryScale = -29.6825;
+		} else if (anniversaryScale > -1) {
+			anniversaryScale = -1;
 			prologueGroup.classList.add("prologue__group--active");
-		} else if (anniversaryScale < -100) {
+		} else if (anniversaryScale < -1) {
 			prologueGroup.classList.remove("prologue__group--active");
 		}
 
@@ -148,13 +121,9 @@ const prologue = () => {
 			circleScale = -100;
 		}
 
-		prologue.style.setProperty("--prologue-anniversary-scale", anniversaryScale + "%");
+		prologue.style.setProperty("--prologue-anniversary-scale", anniversaryScale);
 		prologue.style.setProperty("--prologue-anniversary-margin", anniversaryMargin + "%");
 		prologue.style.setProperty("--prologue-circle-scale", circleScale + "%");
 	});
 };
-
-window.addEventListener("DOMContentLoaded", () => {
-	kv();
-	prologue();
-});
+prologue();
