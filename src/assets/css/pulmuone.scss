@@ -318,7 +318,7 @@
 		left: 50%;
 		margin-top: var(--prologue-anniversary-margin);
 		position: absolute;
-		top: calc(50% - min(1.88vw, 36px));
+		top: 50%;
 		transform: translate(-50%, -50%) rotate(180deg) matrix(var(--prologue-anniversary-scale), 0, 0, var(--prologue-anniversary-scale), 0, 0);
 		width: min(11.46vw, 220px);
 	}
@@ -361,7 +361,7 @@
 
 		.anniversary {
 			height: 27.78vw;
-			top: calc(50% - 15vw);
+			top: 50%;
 			width: 27.78vw;
 		}
 	}

@@ -28,19 +28,35 @@ const coverflowSwiper = new Swiper(".coverflow", {
 	effect: "coverflow",
 	coverflowEffect: {
 		rotate: 0,
-		stretch: 514,
+		// stretch: 514,
 		depth: 50,
 		modifier: 1,
 		slideShadows: false
 	},
+	breakpoints: {
+		720: {
+			coverflowEffect: {
+				depth: 20
+			}
+		}
+	},
 	on: {
 		init: function (swiper) {
-			swiper.params.coverflowEffect.stretch = swiper.height - 80;
+			if (window.innerWidth > 720) {
+				swiper.params.coverflowEffect.stretch = swiper.height - 60;
+			} else {
+				swiper.params.coverflowEffect.stretch = swiper.height - 75;
+			}
 			swiper.update();
-		},
-		resize: function (swiper) {
-			swiper.params.coverflowEffect.stretch = swiper.height - 80;
-			swiper.update();
+
+			window.addEventListener("resize", function (event) {
+				if (window.innerWidth > 720) {
+					swiper.params.coverflowEffect.stretch = swiper.height - 60;
+				} else {
+					swiper.params.coverflowEffect.stretch = swiper.height - 75;
+				}
+				swiper.update();
+			});
 		}
 	}
 });
@@ -99,6 +115,7 @@ const prologue = () => {
 		anniversaryScale = (window.scrollY - prologue.offsetHeight * 2) * 0.03;
 		anniversaryMargin = (window.scrollY - prologue.offsetHeight * 2) * 0.04;
 		circleScale = (window.scrollY - prologue.offsetHeight * 2) * 0.3;
+		// console.log(anniversaryScale);
 
 		if (anniversaryScale < -29.6825) {
 			anniversaryScale = -29.6825;
@@ -121,7 +138,7 @@ const prologue = () => {
 			circleScale = -100;
 		}
 
-		prologue.style.setProperty("--prologue-anniversary-scale", anniversaryScale);
+		prologue.style.setProperty("--prologue-anniversary-scale", Math.abs(anniversaryScale));
 		prologue.style.setProperty("--prologue-anniversary-margin", anniversaryMargin + "%");
 		prologue.style.setProperty("--prologue-circle-scale", circleScale + "%");
 	});
