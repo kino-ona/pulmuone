@@ -115,7 +115,6 @@ const prologue = () => {
 		anniversaryScale = (window.scrollY - prologue.offsetHeight * 2) * 0.03;
 		anniversaryMargin = (window.scrollY - prologue.offsetHeight * 2) * 0.04;
 		circleScale = (window.scrollY - prologue.offsetHeight * 2) * 0.3;
-		// console.log(anniversaryScale);
 
 		if (anniversaryScale < -29.6825) {
 			anniversaryScale = -29.6825;
