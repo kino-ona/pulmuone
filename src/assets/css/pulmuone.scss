@@ -574,7 +574,8 @@
 
 		.lottie {
 			aspect-ratio: 1 / 0.8334;
-			background-color: pink;
+
+			// background-color: pink;
 			margin: auto auto 0;
 			width: 84.11%;
 		}
@@ -759,11 +760,11 @@
 			margin: min(3.13vw, 60px) auto 0;
 			max-width: 1320px;
 
-			&__ico {
-				height: min(6.25vw, 120px);
-				margin: 0 auto min(1.77vw, 34px);
-				width: min(6.25vw, 120px);
-			}
+			// &__ico {
+			// 	height: min(6.25vw, 120px);
+			// 	margin: 0 auto min(1.77vw, 34px);
+			// 	width: min(6.25vw, 120px);
+			// }
 
 			&__img {
 				height: min(7.29vw, 140px);
