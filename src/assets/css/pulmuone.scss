@@ -112,7 +112,7 @@
 
 	.intro {
 		align-items: center;
-		background-color: #97d91a;
+		background-color: #80c342;
 		clip-path: circle(var(--intro-circle));
 		display: flex;
 
@@ -281,10 +281,9 @@
 		background: url("../images/circle.svg") 0 0 / 100% 100%;
 		height: min(51.04vw, 980px);
 		left: 50%;
-		margin-top: max(-1.88vw, -36px);
 		position: absolute;
-		top: 0;
-		transform: translate(-50%, 0) scale(var(--prologue-circle-scale));
+		top: 50%;
+		transform: translate(-50%, -50%) scale(var(--prologue-circle-scale));
 		width: min(51.04vw, 980px);
 	}
 
@@ -347,7 +346,7 @@
 			aspect-ratio: 1;
 			height: auto;
 			margin-top: 0;
-			top: 37.22vw;
+			top: 50%;
 			width: calc(100% + 3.89vw);
 		}
 
@@ -665,6 +664,42 @@
 			.coverflow {
 				&__box {
 					background-color: #f5f0fb;
+
+					.list {
+						&__item {
+							&:nth-child(1) {
+								.list {
+									&__img {
+										background-image: url("../images/img_coverflow01_01.png");
+									}
+								}
+							}
+
+							&:nth-child(2) {
+								.list {
+									&__img {
+										background-image: url("../images/img_coverflow01_02.png");
+									}
+								}
+							}
+
+							&:nth-child(3) {
+								.list {
+									&__img {
+										background-image: url("../images/img_coverflow01_03.png");
+									}
+								}
+							}
+
+							&:nth-child(4) {
+								.list {
+									&__img {
+										background-image: url("../images/img_coverflow01_04.png");
+									}
+								}
+							}
+						}
+					}
 				}
 
 				&__dimmed {
@@ -677,6 +712,34 @@
 			.coverflow {
 				&__box {
 					background-color: #f4f4f1;
+
+					.list {
+						&__item {
+							&:nth-child(1) {
+								.list {
+									&__img {
+										background-image: url("../images/img_coverflow02_01.png");
+									}
+								}
+							}
+
+							&:nth-child(2) {
+								.list {
+									&__img {
+										background-image: url("../images/img_coverflow02_02.png");
+									}
+								}
+							}
+
+							&:nth-child(3) {
+								.list {
+									&__img {
+										background-image: url("../images/img_coverflow02_03.png");
+									}
+								}
+							}
+						}
+					}
 				}
 
 				&__dimmed {
@@ -689,6 +752,34 @@
 			.coverflow {
 				&__box {
 					background-color: #eaf2e0;
+
+					.list {
+						&__item {
+							&:nth-child(1) {
+								.list {
+									&__img {
+										background-image: url("../images/img_coverflow03_01.png");
+									}
+								}
+							}
+
+							&:nth-child(2) {
+								.list {
+									&__img {
+										background-image: url("../images/img_coverflow03_02.png");
+									}
+								}
+							}
+
+							&:nth-child(3) {
+								.list {
+									&__img {
+										background-image: url("../images/img_coverflow03_03.png");
+									}
+								}
+							}
+						}
+					}
 				}
 
 				&__dimmed {
@@ -701,6 +792,18 @@
 			.coverflow {
 				&__box {
 					background-color: #e6f1f7;
+
+					.list {
+						&__item {
+							&:nth-child(1) {
+								.list {
+									&__img {
+										background-image: url("../images/img_coverflow04_01.png");
+									}
+								}
+							}
+						}
+					}
 				}
 
 				&__dimmed {
@@ -713,6 +816,18 @@
 			.coverflow {
 				&__box {
 					background-color: #f9f5ea;
+
+					.list {
+						&__item {
+							&:nth-child(1) {
+								.list {
+									&__img {
+										background-image: url("../images/img_coverflow05_01.png");
+									}
+								}
+							}
+						}
+					}
 				}
 
 				&__dimmed {
@@ -767,6 +882,9 @@
 			// }
 
 			&__img {
+				background-position: 0 0;
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
 				height: min(7.29vw, 140px);
 				margin: 0 auto min(1.25vw, 24px);
 				width: min(12.5vw, 240px);
@@ -873,6 +991,154 @@
 		height: 163.89vw;
 		padding-bottom: 8.33vw;
 
+		&__item {
+			&:nth-child(2) {
+				.coverflow {
+					&__box {
+						.list {
+							&__item {
+								&:nth-child(1) {
+									.list {
+										&__img {
+											background-image: url("../images/m_img_coverflow01_01.png");
+										}
+									}
+								}
+
+								&:nth-child(2) {
+									.list {
+										&__img {
+											background-image: url("../images/m_img_coverflow01_02.png");
+										}
+									}
+								}
+
+								&:nth-child(3) {
+									.list {
+										&__img {
+											background-image: url("../images/m_img_coverflow01_03.png");
+										}
+									}
+								}
+
+								&:nth-child(4) {
+									.list {
+										&__img {
+											background-image: url("../images/m_img_coverflow01_04.png");
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			&:nth-child(3) {
+				.coverflow {
+					&__box {
+						.list {
+							&__item {
+								&:nth-child(1) {
+									.list {
+										&__img {
+											background-image: url("../images/m_img_coverflow02_01.png");
+										}
+									}
+								}
+
+								&:nth-child(2) {
+									.list {
+										&__img {
+											background-image: url("../images/m_img_coverflow02_02.png");
+										}
+									}
+								}
+
+								&:nth-child(3) {
+									.list {
+										&__img {
+											background-image: url("../images/m_img_coverflow02_03.png");
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			&:nth-child(4) {
+				.coverflow {
+					&__box {
+						.list {
+							&__item {
+								&:nth-child(1) {
+									.list {
+										&__img {
+											background-image: url("../images/m_img_coverflow03_01.png");
+										}
+									}
+								}
+
+								&:nth-child(2) {
+									.list {
+										&__img {
+											background-image: url("../images/m_img_coverflow03_02.png");
+										}
+									}
+								}
+
+								&:nth-child(3) {
+									.list {
+										&__img {
+											background-image: url("../images/m_img_coverflow03_03.png");
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			&:nth-child(5) {
+				.coverflow {
+					&__box {
+						.list {
+							&__item {
+								&:nth-child(1) {
+									.list {
+										&__img {
+											background-image: url("../images/m_img_coverflow04_01.png");
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			&:nth-child(6) {
+				.coverflow {
+					&__box {
+						.list {
+							&__item {
+								&:nth-child(1) {
+									.list {
+										&__img {
+											background-image: url("../images/m_img_coverflow05_01.png");
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
 		&__hero {
 			border-radius: 5.56vw;
 
@@ -899,7 +1165,8 @@
 					}
 				}
 
-				&__ico {
+				&__ico,
+				&__img {
 					grid-row: 1 / 3;
 					height: 13.89vw;
 					margin-bottom: 0;
