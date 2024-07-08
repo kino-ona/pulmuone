@@ -8,6 +8,14 @@
 @use "./mixins";
 @use "./breakpoints";
 
+.only {
+	&__pc {
+		display: block;
+	}
+	&__mobile {
+		display: none;
+	}
+}
 .main {
 	padding: min(9.38vw, 180px) 0;
 
@@ -794,6 +802,7 @@
 					background-color: #e6f1f7;
 
 					.list {
+						margin: min(3.13vw, 20px) auto 0;
 						&__item {
 							&:nth-child(1) {
 								.list {
@@ -818,6 +827,7 @@
 					background-color: #f9f5ea;
 
 					.list {
+						margin: min(3.13vw, 20px) auto 0;
 						&__item {
 							&:nth-child(1) {
 								.list {
@@ -871,7 +881,7 @@
 
 		.list {
 			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 			margin: min(3.13vw, 60px) auto 0;
 			max-width: 1320px;
 
@@ -931,6 +941,7 @@
 	}
 
 	.swiper {
+		position: relative;
 		&-wrapper {
 			transition-timing-function: cubic-bezier(0.47, 0, 0.23, 1.38) !important;
 		}
@@ -984,18 +995,62 @@
 				display: none;
 			}
 		}
+		&-btnarea {
+			.swiper-button-prev {
+				cursor: pointer;
+				display: block;
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(calc(-50% - 40px)) rotate(-180deg);
+				z-index: 10;
+				background: url("../images/ico_coverflow_arrow.png") no-repeat center center;
+				background-size: 32px auto;
+			}
+
+			.swiper-button-next {
+				cursor: pointer;
+				display: block;
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				right: 0;
+				top: 50%;
+				transform: translateY(calc(-50% - 40px));
+				background: url("../images/ico_coverflow_arrow.png") no-repeat center center;
+				background-size: 32px auto;
+				z-index: 10;
+			}
+		}
+	}
+
+	&.white {
+		.swiper-button-prev {
+			background: url("../images/ico_coverflow_arrow_white.png") no-repeat center center;
+			background-size: 32px auto;
+		}
+
+		.swiper-button-next {
+			background: url("../images/ico_coverflow_arrow_white.png") no-repeat center center;
+			background-size: 32px auto;
+		}
 	}
 
 	@include breakpoints.md {
 		// height: 590px;
 		height: 163.89vw;
-		padding-bottom: 8.33vw;
+		padding-bottom: calc(8.33vw + 46px);
 
 		&__item {
 			&:nth-child(2) {
 				.coverflow {
 					&__box {
 						.list {
+							margin: min(3.13vw, 36px) auto 0;
 							&__item {
 								&:nth-child(1) {
 									.list {
@@ -1106,11 +1161,18 @@
 				.coverflow {
 					&__box {
 						.list {
+							margin: min(3.13vw, 30px) auto 0;
 							&__item {
+								display: block;
 								&:nth-child(1) {
 									.list {
 										&__img {
+											width: 90px;
+											height: 90px;
 											background-image: url("../images/m_img_coverflow04_01.png");
+										}
+										&__desc {
+											text-align: center;
 										}
 									}
 								}
@@ -1124,11 +1186,18 @@
 				.coverflow {
 					&__box {
 						.list {
+							margin: min(3.13vw, 30px) auto 0;
 							&__item {
+								display: block;
 								&:nth-child(1) {
 									.list {
 										&__img {
+											width: 90px;
+											height: 90px;
 											background-image: url("../images/m_img_coverflow05_01.png");
+										}
+										&__desc {
+											text-align: center;
 										}
 									}
 								}
@@ -1149,7 +1218,7 @@
 
 		&__box {
 			border-radius: 5.56vw;
-			padding: 11.11vw 8.33vw 8.33vw;
+			padding: 11.11vw 8.33vw 19.44vw;
 
 			.list {
 				display: block;
@@ -1185,6 +1254,14 @@
 					text-align: left;
 				}
 			}
+			.button {
+				margin: 0;
+				width: 100%;
+				position: absolute;
+				bottom: 8.33vw;
+				left: 50%;
+				transform: translateX(-50%);
+			}
 		}
 
 		&__dimmed {
@@ -1205,6 +1282,36 @@
 			&-slide {
 				// height: 540px;
 				height: 150vw;
+			}
+			&-btnarea {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				z-index: 10;
+				text-align: center;
+
+				.swiper-button-prev {
+					display: inline-block;
+					position: static;
+					width: 46px;
+					height: 46px;
+					background: #f5f5f5 url("../images/ico_coverflow_arrow.png") no-repeat center center;
+					background-size: 11px auto;
+					border-radius: 50%;
+					transform: translateY(0) rotate(180deg);
+				}
+
+				.swiper-button-next {
+					display: inline-block;
+					position: static;
+					width: 46px;
+					height: 46px;
+					background: #f5f5f5 url("../images/ico_coverflow_arrow.png") no-repeat center center;
+					background-size: 11px auto;
+					border-radius: 50%;
+					transform: translateY(0);
+				}
 			}
 		}
 	}
@@ -1488,6 +1595,17 @@
 
 		&__date {
 			font-size: 3.33vw;
+		}
+	}
+}
+
+@include breakpoints.md {
+	.only {
+		&__pc {
+			display: none;
+		}
+		&__mobile {
+			display: block;
 		}
 	}
 }

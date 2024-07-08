@@ -26,6 +26,8 @@ const coverflowSwiper = new Swiper(".coverflow", {
 	direction: "vertical",
 	slidesPerView: "auto",
 	effect: "coverflow",
+	mousewheel: true,
+	watchOverflow: true,
 	coverflowEffect: {
 		rotate: 0,
 		// stretch: 514,
@@ -33,11 +35,15 @@ const coverflowSwiper = new Swiper(".coverflow", {
 		modifier: 1,
 		slideShadows: false
 	},
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	},
 	breakpoints: {
 		720: {
 			coverflowEffect: {
 				depth: 20
-			}
+			},
 		}
 	},
 	on: {
@@ -57,9 +63,38 @@ const coverflowSwiper = new Swiper(".coverflow", {
 				}
 				swiper.update();
 			});
+		},
+		slideChange: function () {
+			const swiperContainer = document.querySelector('.swiper.coverflow');
+			if (this.activeIndex === 0) {
+				swiperContainer.classList.add('white');
+			} else {
+				swiperContainer.classList.remove('white');
+			}
+			setTimeout(function () {
+				coverflowSwiper.params.touchReleaseOnEdges = false;
+				coverflowSwiper.params.mousewheel.releaseOnEdges = false;
+			});
+		},
+		reachEnd: function () {
+			setTimeout(function () {
+				coverflowSwiper.params.touchReleaseOnEdges = true;
+				coverflowSwiper.params.mousewheel.releaseOnEdges = true;
+			}, 500);
+		},
+		reachBeginning: function () {
+			setTimeout(function () {
+				coverflowSwiper.params.touchReleaseOnEdges = true;
+				coverflowSwiper.params.mousewheel.releaseOnEdges = true;
+			}, 500);
 		}
 	}
 });
+
+const swiperContainer = document.querySelector('.coverflow.swiper');
+if (coverflowSwiper.activeIndex === 0) {
+	swiperContainer.classList.add('white');
+}
 
 const kv = () => {
 	const intro = document.querySelector(".intro");
