@@ -26,8 +26,9 @@ const coverflowSwiper = new Swiper(".coverflow", {
 	direction: "vertical",
 	slidesPerView: "auto",
 	effect: "coverflow",
-	mousewheel: true,
-	watchOverflow: true,
+	mousewheel: {
+		releaseOnEdges: true
+	},
 	coverflowEffect: {
 		rotate: 0,
 		// stretch: 514,
@@ -35,19 +36,25 @@ const coverflowSwiper = new Swiper(".coverflow", {
 		modifier: 1,
 		slideShadows: false
 	},
+	touchReleaseOnEdges: true,
+	threshold: 0,
 	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev"
 	},
 	breakpoints: {
 		720: {
 			coverflowEffect: {
 				depth: 20
-			},
+			}
 		}
 	},
 	on: {
 		init: function (swiper) {
+			if (swiper.activeIndex === 0) {
+				swiper.el.classList.add("white");
+			}
+
 			if (window.innerWidth > 720) {
 				swiper.params.coverflowEffect.stretch = swiper.height - 60;
 			} else {
@@ -64,37 +71,15 @@ const coverflowSwiper = new Swiper(".coverflow", {
 				swiper.update();
 			});
 		},
-		slideChange: function () {
-			const swiperContainer = document.querySelector('.swiper.coverflow');
+		slideChange: function (swiper) {
 			if (this.activeIndex === 0) {
-				swiperContainer.classList.add('white');
+				swiper.el.classList.add("white");
 			} else {
-				swiperContainer.classList.remove('white');
+				swiper.el.classList.remove("white");
 			}
-			setTimeout(function () {
-				coverflowSwiper.params.touchReleaseOnEdges = false;
-				coverflowSwiper.params.mousewheel.releaseOnEdges = false;
-			});
-		},
-		reachEnd: function () {
-			setTimeout(function () {
-				coverflowSwiper.params.touchReleaseOnEdges = true;
-				coverflowSwiper.params.mousewheel.releaseOnEdges = true;
-			}, 500);
-		},
-		reachBeginning: function () {
-			setTimeout(function () {
-				coverflowSwiper.params.touchReleaseOnEdges = true;
-				coverflowSwiper.params.mousewheel.releaseOnEdges = true;
-			}, 500);
 		}
 	}
 });
-
-const swiperContainer = document.querySelector('.coverflow.swiper');
-if (coverflowSwiper.activeIndex === 0) {
-	swiperContainer.classList.add('white');
-}
 
 const kv = () => {
 	const intro = document.querySelector(".intro");
