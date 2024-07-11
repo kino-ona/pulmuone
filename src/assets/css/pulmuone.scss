@@ -716,47 +716,48 @@
 			}
 		}
 
+		// 0711 컨텐츠 임시 삭제로 주석 처리
+		// &:nth-child(3) {
+		// 	.coverflow {
+		// 		&__box {
+		// 			background-color: #f4f4f1;
+
+		// 			.list {
+		// 				&__item {
+		// 					&:nth-child(1) {
+		// 						.list {
+		// 							&__img {
+		// 								background-image: url("../images/img_coverflow02_01.png");
+		// 							}
+		// 						}
+		// 					}
+
+		// 					&:nth-child(2) {
+		// 						.list {
+		// 							&__img {
+		// 								background-image: url("../images/img_coverflow02_02.png");
+		// 							}
+		// 						}
+		// 					}
+
+		// 					&:nth-child(3) {
+		// 						.list {
+		// 							&__img {
+		// 								background-image: url("../images/img_coverflow02_03.png");
+		// 							}
+		// 						}
+		// 					}
+		// 				}
+		// 			}
+		// 		}
+
+		// 		&__dimmed {
+		// 			background: linear-gradient(0deg, rgb(0 0 0 / 10%) 0%, rgb(0 0 0 / 10%) 100%), #f4f4f1;
+		// 		}
+		// 	}
+		// }
+
 		&:nth-child(3) {
-			.coverflow {
-				&__box {
-					background-color: #f4f4f1;
-
-					.list {
-						&__item {
-							&:nth-child(1) {
-								.list {
-									&__img {
-										background-image: url("../images/img_coverflow02_01.png");
-									}
-								}
-							}
-
-							&:nth-child(2) {
-								.list {
-									&__img {
-										background-image: url("../images/img_coverflow02_02.png");
-									}
-								}
-							}
-
-							&:nth-child(3) {
-								.list {
-									&__img {
-										background-image: url("../images/img_coverflow02_03.png");
-									}
-								}
-							}
-						}
-					}
-				}
-
-				&__dimmed {
-					background: linear-gradient(0deg, rgb(0 0 0 / 10%) 0%, rgb(0 0 0 / 10%) 100%), #f4f4f1;
-				}
-			}
-		}
-
-		&:nth-child(4) {
 			.coverflow {
 				&__box {
 					background-color: #eaf2e0;
@@ -796,7 +797,7 @@
 			}
 		}
 
-		&:nth-child(5) {
+		&:nth-child(4) {
 			.coverflow {
 				&__box {
 					background-color: #e6f1f7;
@@ -821,7 +822,7 @@
 			}
 		}
 
-		&:nth-child(6) {
+		&:nth-child(5) {
 			.coverflow {
 				&__box {
 					background-color: #f9f5ea;
@@ -1050,7 +1051,6 @@
 				.coverflow {
 					&__box {
 						.list {
-							margin: min(3.13vw, 36px) auto 0;
 							&__item {
 								&:nth-child(1) {
 									.list {
@@ -1089,41 +1089,42 @@
 				}
 			}
 
+			// 0711 컨텐츠 임시 삭제로 주석 처리
+			// &:nth-child(3) {
+			// 	.coverflow {
+			// 		&__box {
+			// 			.list {
+			// 				&__item {
+			// 					&:nth-child(1) {
+			// 						.list {
+			// 							&__img {
+			// 								background-image: url("../images/m_img_coverflow02_01.png");
+			// 							}
+			// 						}
+			// 					}
+
+			// 					&:nth-child(2) {
+			// 						.list {
+			// 							&__img {
+			// 								background-image: url("../images/m_img_coverflow02_02.png");
+			// 							}
+			// 						}
+			// 					}
+
+			// 					&:nth-child(3) {
+			// 						.list {
+			// 							&__img {
+			// 								background-image: url("../images/m_img_coverflow02_03.png");
+			// 							}
+			// 						}
+			// 					}
+			// 				}
+			// 			}
+			// 		}
+			// 	}
+			// }
+
 			&:nth-child(3) {
-				.coverflow {
-					&__box {
-						.list {
-							&__item {
-								&:nth-child(1) {
-									.list {
-										&__img {
-											background-image: url("../images/m_img_coverflow02_01.png");
-										}
-									}
-								}
-
-								&:nth-child(2) {
-									.list {
-										&__img {
-											background-image: url("../images/m_img_coverflow02_02.png");
-										}
-									}
-								}
-
-								&:nth-child(3) {
-									.list {
-										&__img {
-											background-image: url("../images/m_img_coverflow02_03.png");
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-
-			&:nth-child(4) {
 				.coverflow {
 					&__box {
 						.list {
@@ -1157,11 +1158,11 @@
 				}
 			}
 
-			&:nth-child(5) {
+			&:nth-child(4) {
 				.coverflow {
 					&__box {
 						.list {
-							margin: min(3.13vw, 30px) auto 0;
+							margin: 8.3vw;
 							&__item {
 								display: block;
 								&:nth-child(1) {
@@ -1182,11 +1183,11 @@
 				}
 			}
 
-			&:nth-child(6) {
+			&:nth-child(5) {
 				.coverflow {
 					&__box {
 						.list {
-							margin: min(3.13vw, 30px) auto 0;
+							margin: 8.3vw;
 							&__item {
 								display: block;
 								&:nth-child(1) {
