@@ -12,10 +12,12 @@
 	&__pc {
 		display: block;
 	}
+
 	&__mobile {
 		display: none;
 	}
 }
+
 .main {
 	padding: min(9.38vw, 180px) 0;
 
@@ -107,6 +109,11 @@
 				width: min(25vw, 480px);
 
 				img {
+					height: 100%;
+					width: 100%;
+				}
+
+				.lottie {
 					height: 100%;
 					width: 100%;
 				}
@@ -804,6 +811,7 @@
 
 					.list {
 						margin: min(3.13vw, 20px) auto 0;
+
 						&__item {
 							&:nth-child(1) {
 								.list {
@@ -829,6 +837,7 @@
 
 					.list {
 						margin: min(3.13vw, 20px) auto 0;
+
 						&__item {
 							&:nth-child(1) {
 								.list {
@@ -943,6 +952,7 @@
 
 	.swiper {
 		position: relative;
+
 		&-wrapper {
 			transition-timing-function: cubic-bezier(0.47, 0, 0.23, 1.38) !important;
 		}
@@ -996,34 +1006,35 @@
 				display: none;
 			}
 		}
+
 		&-btnarea {
 			.swiper-button-prev {
-				cursor: pointer;
-				display: block;
-				width: 100px;
-				height: 100px;
 				background: red;
-				position: absolute;
-				left: 0;
-				top: 50%;
-				transform: translateY(calc(-50% - 40px)) rotate(-180deg);
-				z-index: 10;
 				background: url("../images/ico_coverflow_arrow.png") no-repeat center center;
 				background-size: 32px auto;
+				cursor: pointer;
+				display: block;
+				height: 100px;
+				left: 0;
+				position: absolute;
+				top: 50%;
+				transform: translateY(calc(-50% - 40px)) rotate(-180deg);
+				width: 100px;
+				z-index: 10;
 			}
 
 			.swiper-button-next {
+				background: red;
+				background: url("../images/ico_coverflow_arrow.png") no-repeat center center;
+				background-size: 32px auto;
 				cursor: pointer;
 				display: block;
-				width: 100px;
 				height: 100px;
-				background: red;
 				position: absolute;
 				right: 0;
 				top: 50%;
 				transform: translateY(calc(-50% - 40px));
-				background: url("../images/ico_coverflow_arrow.png") no-repeat center center;
-				background-size: 32px auto;
+				width: 100px;
 				z-index: 10;
 			}
 		}
@@ -1163,15 +1174,18 @@
 					&__box {
 						.list {
 							margin: 8.3vw;
+
 							&__item {
 								display: block;
+
 								&:nth-child(1) {
 									.list {
 										&__img {
-											width: 90px;
-											height: 90px;
 											background-image: url("../images/m_img_coverflow04_01.png");
+											height: 90px;
+											width: 90px;
 										}
+
 										&__desc {
 											text-align: center;
 										}
@@ -1188,15 +1202,18 @@
 					&__box {
 						.list {
 							margin: 8.3vw;
+
 							&__item {
 								display: block;
+
 								&:nth-child(1) {
 									.list {
 										&__img {
-											width: 90px;
-											height: 90px;
 											background-image: url("../images/m_img_coverflow05_01.png");
+											height: 90px;
+											width: 90px;
 										}
+
 										&__desc {
 											text-align: center;
 										}
@@ -1255,13 +1272,14 @@
 					text-align: left;
 				}
 			}
+
 			.button {
-				margin: 0;
-				width: 100%;
-				position: absolute;
 				bottom: 8.33vw;
 				left: 50%;
+				margin: 0;
+				position: absolute;
 				transform: translateX(-50%);
+				width: 100%;
 			}
 		}
 
@@ -1284,34 +1302,35 @@
 				// height: 540px;
 				height: 150vw;
 			}
+
 			&-btnarea {
-				position: absolute;
 				bottom: 0;
 				left: 0;
+				position: absolute;
+				text-align: center;
 				width: 100%;
 				z-index: 10;
-				text-align: center;
 
 				.swiper-button-prev {
-					display: inline-block;
-					position: static;
-					width: 46px;
-					height: 46px;
 					background: #f5f5f5 url("../images/ico_coverflow_arrow.png") no-repeat center center;
 					background-size: 11px auto;
 					border-radius: 50%;
+					display: inline-block;
+					height: 46px;
+					position: static;
 					transform: translateY(0) rotate(180deg);
+					width: 46px;
 				}
 
 				.swiper-button-next {
-					display: inline-block;
-					position: static;
-					width: 46px;
-					height: 46px;
 					background: #f5f5f5 url("../images/ico_coverflow_arrow.png") no-repeat center center;
 					background-size: 11px auto;
 					border-radius: 50%;
+					display: inline-block;
+					height: 46px;
+					position: static;
 					transform: translateY(0);
+					width: 46px;
 				}
 			}
 		}
@@ -1605,6 +1624,7 @@
 		&__pc {
 			display: none;
 		}
+
 		&__mobile {
 			display: block;
 		}
