@@ -12,7 +12,7 @@ window.addEventListener("resize", () => {
 const kvSwiper = new Swiper(".kv__swiper", {
 	loop: true,
 	slidesPerView: "auto",
-	centeredSlides: true,
+	// centeredSlides: true,
 	freeMode: true,
 	speed: 6000,
 	allowTouchMove: false,
